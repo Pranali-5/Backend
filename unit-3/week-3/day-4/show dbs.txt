@@ -1,0 +1,324 @@
+> show dbs;                                                                                                                                                                                          
+admin   0.000GB                                                                                                                                                                                      
+config  0.000GB                                                                                                                                                                                      
+local   0.000GB                                                                                                                                                                                      
+> use assignment;                                                                                                                                                                                    
+switched to db assignment                                                                                                                                                                            
+> db.createCollection('users');                                                                                                                                                                      
+{ "ok" : 1 }                                                                                                                                                                                         
+> 
+db.users.insert({"first_name":"Pranali","last_name":"Malkar","email":"abc@gmail.com","gender":"F
+emale","ip_address":"127.0.0.1","age":"24"});                                                      WriteResult({ 
+"nInserted" : 1 })                                                                                                                                                                     
+> show dbs;                                                                                                                                                                                          
+admin       0.000GB                                                                                                                                                                                  
+assignment  0.000GB                                                                                                                                                                                  
+config      0.000GB                                                                                                                                                                                  
+local       0.000GB                                                                                                                                                                                  
+> db.users.find();                                                                                                                                                                                   
+{ "_id" : ObjectId("611677bd8a0ba430ac1a5903"), "first_name" : "Pranali", "last_name" : "Malkar", 
+"email" : "abc@gmail.com", "gender" : "Female", "ip_address" : "127.0.0.1", "age" : "24" }         > 
+db.users.insertMany(   
+[{"first_name":"Angelle","last_name":"Biggar","email":"abiggar0@newsvine.com","gender":"Polyge
+nder","ip_address":"129.251.240.88","age":81},                                ... 
+{"first_name":"Doe","last_name":"Nottingham","email":"dnottingham1@nbcnews.com","gender":"
+Agender","ip_address":"222.207.81.166","age":19},                                                      ... 
+{"first_name":"Annie","last_name":"Ourry","email":"aourry2@boston.com","gender":"Agender","ip
+_address":"47.171.152.245","age":25},                                                               ... 
+{"first_name":"Thaxter","last_name":"Cadreman","email":"tcadreman3@apple.com","gender":"Fem
+ale","ip_address":"12.17.82.104","age":1},                                                            ... 
+{"first_name":"Beverley","last_name":"Wellman","email":"bwellman4@rambler.ru","gender":"Gend
+erqueer","ip_address":"14.16.237.218","age":43},                                                     ... 
+{"first_name":"Bekki","last_name":"Tamsett","email":"btamsett5@aboutads.info","gender":"Femal
+e","ip_address":"76.247.141.5","age":62},                                                           ... 
+{"first_name":"Foss","last_name":"Joselin","email":"fjoselin6@themeforest.net","gender":"Genderq
+ueer","ip_address":"40.25.79.151","age":48},                                                     ... 
+{"first_name":"Avrom","last_name":"MattiCCI","email":"amatticci7@1und1.de","gender":"Agender"
+,"ip_address":"90.6.125.120","age":48},                                                             ... 
+{"first_name":"Pietrek","last_name":"Figgins","email":"pfiggins8@weibo.com","gender":"Polygende
+r","ip_address":"111.108.233.139","age":14}]);                                                    {                                                                                                                                                                                                            
+"acknowledged" : true,                                                                                                                                                                               
+"insertedIds" : [                                                                                                                                                                                            
+ObjectId("611679cc8a0ba430ac1a5904"),                                                                                                                                                                
+ObjectId("611679cc8a0ba430ac1a5905"),                                                                                                                                                                
+ObjectId("611679cc8a0ba430ac1a5906"),                                                                                                                                                                
+ObjectId("611679cc8a0ba430ac1a5907"),                                                                                                                                                                
+ObjectId("611679cc8a0ba430ac1a5908"),                                                                                                                                                                
+ObjectId("611679cc8a0ba430ac1a5909"),                                                                                                                                                                
+ObjectId("611679cc8a0ba430ac1a590a"),                                                                                                                                                                
+ObjectId("611679cc8a0ba430ac1a590b"),                                                                                                                                                                
+ObjectId("611679cc8a0ba430ac1a590c")                                                                                                                                                         
+]                                                                                                                                                                                            
+}                                                                                                                                                                                                    
+> db.users.find.pretty();                                                                                                                                                                            
+uncaught exception: TypeError: db.users.find.pretty is not a function :                                                                                                                              
+@(shell):1:1                                                                                                                                                                                         
+> db.users.find().pretty();                                                                                                                                                                          
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611677bd8a0ba430ac1a5903"),                                                                                                                                                        
+"first_name" : "Pranali",                                                                                                                                                                            
+"last_name" : "Malkar",                                                                                                                                                                              
+"email" : "abc@gmail.com",                                                                                                                                                                           
+"gender" : "Female",                                                                                                                                                                                 
+"ip_address" : "127.0.0.1",                                                                                                                                                                          
+"age" : "24"                                                                                                                                                                                 
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5904"),                                                                                                                                                        
+"first_name" : "Angelle",                                                                                                                                                                            
+"last_name" : "Biggar",                                                                                                                                                                              
+"email" : "abiggar0@newsvine.com",                                                                                                                                                                   
+"gender" : "Polygender",                                                                                                                                                                             
+"ip_address" : "129.251.240.88",                                                                                                                                                                     
+"age" : 81                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5905"),                                                                                                                                                        
+"first_name" : "Doe",                                                                                                                                                                                
+"last_name" : "Nottingham",                                                                                                                                                                          
+"email" : "dnottingham1@nbcnews.com",                                                                                                                                                                
+"gender" : "Agender",                                                                                                                                                                                
+"ip_address" : "222.207.81.166",                                                                                                                                                                     
+"age" : 19                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5906"),                                                                                                                                                        
+"first_name" : "Annie",                                                                                                                                                                              
+"last_name" : "Ourry",                                                                                                                                                                               
+"email" : "aourry2@boston.com",                                                                                                                                                                      
+"gender" : "Agender",                                                                                                                                                                                
+"ip_address" : "47.171.152.245",                                                                                                                                                                     
+"age" : 25                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5907"),                                                                                                                                                        
+"first_name" : "Thaxter",                                                                                                                                                                            
+"last_name" : "Cadreman",                                                                                                                                                                            
+"email" : "tcadreman3@apple.com",                                                                                                                                                                    
+"gender" : "Female",                                                                                                                                                                                 
+"ip_address" : "12.17.82.104",                                                                                                                                                                       
+"age" : 1                                                                                                                                                                                    
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5908"),                                                                                                                                                        
+"first_name" : "Beverley",                                                                                                                                                                           
+"last_name" : "Wellman",                                                                                                                                                                             
+"email" : "bwellman4@rambler.ru",                                                                                                                                                                    
+"gender" : "Genderqueer",                                                                                                                                                                            
+"ip_address" : "14.16.237.218",                                                                                                                                                                      
+"age" : 43                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5909"),                                                                                                                                                        
+"first_name" : "Bekki",                                                                                                                                                                              
+"last_name" : "Tamsett",                                                                                                                                                                             
+"email" : "btamsett5@aboutads.info",                                                                                                                                                                 
+"gender" : "Female",                                                                                                                                                                                 
+"ip_address" : "76.247.141.5",                                                                                                                                                                       
+"age" : 62                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a590a"),                                                                                                                                                        
+"first_name" : "Foss",                                                                                                                                                                               
+"last_name" : "Joselin",                                                                                                                                                                             
+"email" : "fjoselin6@themeforest.net",                                                                                                                                                               
+"gender" : "Genderqueer",                                                                                                                                                                            
+"ip_address" : "40.25.79.151",                                                                                                                                                                       
+"age" : 48                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a590b"),                                                                                                                                                        
+"first_name" : "Avrom",                                                                                                                                                                              
+"last_name" : "MattiCCI",                                                                                                                                                                            
+"email" : "amatticci7@1und1.de",                                                                                                                                                                     
+"gender" : "Agender",                                                                                                                                                                                
+"ip_address" : "90.6.125.120",                                                                                                                                                                       
+"age" : 48                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a590c"),                                                                                                                                                        
+"first_name" : "Pietrek",                                                                                                                                                                            
+"last_name" : "Figgins",                                                                                                                                                                             
+"email" : "pfiggins8@weibo.com",                                                                                                                                                                     
+"gender" : "Polygender",                                                                                                                                                                             
+"ip_address" : "111.108.233.139",                                                                                                                                                                    
+"age" : 14                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+> db.users.findOne({"_id" : ObjectId("611679cc8a0ba430ac1a5907")});                                                                                                                                  
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5907"),                                                                                                                                                        
+"first_name" : "Thaxter",                                                                                                                                                                            
+"last_name" : "Cadreman",                                                                                                                                                                            
+"email" : "tcadreman3@apple.com",                                                                                                                                                                    
+"gender" : "Female",                                                                                                                                                                                 
+"ip_address" : "12.17.82.104",                                                                                                                                                                       
+"age" : 1                                                                                                                                                                                    
+}                                                                                                                                                                                                    
+> db,users.update({"_id" : ObjectId("611679cc8a0ba430ac1a5907")},{$set:{"first_name":"Johnny"});                                                                                                     
+...  db.users.update({"_id" : 
+ObjectId("611679cc8a0ba430ac1a5907")},{$set:{"first_name":"Johnny"});                                                                                                  
+... >                                                                                                                                                                                                
+... db.runCommand();                                                                                                                                                                                 
+... db.runCommand(db.users.update({"_id" : 
+ObjectId("611679cc8a0ba430ac1a5907")},{$set:{"first_name":"Johnny"}));                                                                                    
+... ^C                                                                                                                                                                                                                                                                                                                                                                                                    
+> db.users.update({"_id" : ObjectId("611679cc8a0ba430ac1a5907")},{$set:{"first_name":"Johnny"});                                                                                                     
+... ^C                                                                                                                                                                                                                                                                                                                                                                                                    
+> db.users.findOne({"_id" : ObjectId("611679cc8a0ba430ac1a5907")}});                                                                                                                                 
+uncaught exception: SyntaxError: missing ) after argument list :                                                                                                                                     
+@(shell):1:63                                                                                                                                                                                        
+> db.users.update({"_id" : ObjectId("611679cc8a0ba430ac1a5907")},{$set:{"first_name":"Johnny"}});                                                                                                    
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })                                                                                                                                    
+> db.users.findOne({"_id" : ObjectId("611679cc8a0ba430ac1a5907")});                                                                                                                                  
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5907"),                                                                                                                                                        
+"first_name" : "Johnny",                                                                                                                                                                             
+"last_name" : "Cadreman",                                                                                                                                                                            
+"email" : "tcadreman3@apple.com",                                                                                                                                                                    
+"gender" : "Female",                                                                                                                                                                                 
+"ip_address" : "12.17.82.104",                                                                                                                                                                       
+"age" : 1                                                                                                                                                                                    
+}                                                                                                                                                                                                    
+> db.users.updateMany({"gender" : "Female")},{$set:{"first_name":"Pranali"}});                                                                                                                       
+uncaught exception: SyntaxError: missing } after property list :                                                                                                                                     
+@(shell):1:40                                                                                                                                                                                        
+> db.users.updateMany({"gender" : "Female"},{$set:{"first_name":"Pranali"}});                                                                                                                        
+{ "acknowledged" : true, "matchedCount" : 3, "modifiedCount" : 2 }                                                                                                                                   
+> db.users.find({"gender" : "Female"}).pretty();                                                                                                                                                     
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611677bd8a0ba430ac1a5903"),                                                                                                                                                        
+"first_name" : "Pranali",                                                                                                                                                                            
+"last_name" : "Malkar",                                                                                                                                                                              
+"email" : "abc@gmail.com",                                                                                                                                                                           
+"gender" : "Female",                                                                                                                                                                                 
+"ip_address" : "127.0.0.1",                                                                                                                                                                          
+"age" : "24"                                                                                                                                                                                 
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5907"),                                                                                                                                                        
+"first_name" : "Pranali",                                                                                                                                                                            
+"last_name" : "Cadreman",                                                                                                                                                                            
+"email" : "tcadreman3@apple.com",                                                                                                                                                                    
+"gender" : "Female",                                                                                                                                                                                 
+"ip_address" : "12.17.82.104",                                                                                                                                                                       
+"age" : 1                                                                                                                                                                                    
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5909"),                                                                                                                                                        
+"first_name" : "Pranali",                                                                                                                                                                            
+"last_name" : "Tamsett",                                                                                                                                                                             
+"email" : "btamsett5@aboutads.info",                                                                                                                                                                 
+"gender" : "Female",                                                                                                                                                                                 
+"ip_address" : "76.247.141.5",                                                                                                                                                                       
+"age" : 62                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+> db.users.remove({"firste_name":"Pranali"},1);                                                                                                                                                      
+WriteResult({ "nRemoved" : 0 })                                                                                                                                                                      
+> db.users.remove({"first_name":"Pranali"},1);                                                                                                                                                       
+WriteResult({ "nRemoved" : 1 })                                                                                                                                                                      
+> db.users.find();                                                                                                                                                                                   
+{ "_id" : ObjectId("611679cc8a0ba430ac1a5904"), "first_name" : "Angelle", "last_name" : "Biggar", 
+"email" : "abiggar0@newsvine.com", "gender" : "Polygender", "ip_address" : "129.251.240.88", 
+"age" : 81 }                                                                                                                                                                                               
+{ "_id" : ObjectId("611679cc8a0ba430ac1a5905"), "first_name" : "Doe", "last_name" : "Nottingham", 
+"email" : "dnottingham1@nbcnews.com", "gender" : "Agender", "ip_address" : "222.207.81.166", 
+"age" : 19 }                                                                                                                                                                                               
+{ "_id" : ObjectId("611679cc8a0ba430ac1a5906"), "first_name" : "Annie", "last_name" : "Ourry", 
+"email" : "aourry2@boston.com", "gender" : "Agender", "ip_address" : "47.171.152.245", "age" : 25 
+}   { "_id" : ObjectId("611679cc8a0ba430ac1a5907"), "first_name" : "Pranali", "last_name" : 
+"Cadreman", "email" : "tcadreman3@apple.com", "gender" : "Female", "ip_address" : 
+"12.17.82.104", "age" : 1 }                                                                                                                                                                                                     
+{ "_id" : ObjectId("611679cc8a0ba430ac1a5908"), "first_name" : "Beverley", "last_name" : 
+"Wellman", "email" : "bwellman4@rambler.ru", "gender" : "Genderqueer", "ip_address" : 
+"14.16.237.218", "age" : 43 }                                                                                                                                                                                              
+{ "_id" : ObjectId("611679cc8a0ba430ac1a5909"), "first_name" : "Pranali", "last_name" : "Tamsett", 
+"email" : "btamsett5@aboutads.info", "gender" : "Female", "ip_address" : "76.247.141.5", "age" : 62 
+}                                                                                                                                                                                                  
+{ "_id" : ObjectId("611679cc8a0ba430ac1a590a"), "first_name" : "Foss", "last_name" : "Joselin", 
+"email" : "fjoselin6@themeforest.net", "gender" : "Genderqueer", "ip_address" : "40.25.79.151", 
+"age" : 48 }                                                                                                                                                                                              
+{ "_id" : ObjectId("611679cc8a0ba430ac1a590b"), "first_name" : "Avrom", "last_name" : "MattiCCI", 
+"email" : "amatticci7@1und1.de", "gender" : "Agender", "ip_address" : "90.6.125.120", "age" : 48 } { 
+"_id" : ObjectId("611679cc8a0ba430ac1a590c"), "first_name" : "Pietrek", "last_name" : "Figgins", 
+"email" : "pfiggins8@weibo.com", "gender" : "Polygender", "ip_address" : "111.108.233.139", "age" 
+: 14 }                                                                                                                                                                                               
+> db.users.remove({"first_name":"Pranali"});                                                                                                                                                         
+WriteResult({ "nRemoved" : 2 })                                                                                                                                                                      
+> db.users.find().pretty();                                                                                                                                                                          
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5904"),                                                                                                                                                        
+"first_name" : "Angelle",                                                                                                                                                                            
+"last_name" : "Biggar",                                                                                                                                                                              
+"email" : "abiggar0@newsvine.com",                                                                                                                                                                   
+"gender" : "Polygender",                                                                                                                                                                             
+"ip_address" : "129.251.240.88",                                                                                                                                                                     
+"age" : 81                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5905"),                                                                                                                                                        
+"first_name" : "Doe",                                                                                                                                                                                
+"last_name" : "Nottingham",                                                                                                                                                                          
+"email" : "dnottingham1@nbcnews.com",                                                                                                                                                                
+"gender" : "Agender",                                                                                                                                                                                
+"ip_address" : "222.207.81.166",                                                                                                                                                                     
+"age" : 19                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5906"),                                                                                                                                                        
+"first_name" : "Annie",                                                                                                                                                                              
+"last_name" : "Ourry",                                                                                                                                                                               
+"email" : "aourry2@boston.com",                                                                                                                                                                      
+"gender" : "Agender",                                                                                                                                                                                
+"ip_address" : "47.171.152.245",                                                                                                                                                                     
+"age" : 25                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a5908"),                                                                                                                                                        
+"first_name" : "Beverley",                                                                                                                                                                           
+"last_name" : "Wellman",                                                                                                                                                                             
+"email" : "bwellman4@rambler.ru",                                                                                                                                                                    
+"gender" : "Genderqueer",                                                                                                                                                                            
+"ip_address" : "14.16.237.218",                                                                                                                                                                      
+"age" : 43                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a590a"),                                                                                                                                                        
+"first_name" : "Foss",                                                                                                                                                                               
+"last_name" : "Joselin",                                                                                                                                                                             
+"email" : "fjoselin6@themeforest.net",                                                                                                                                                               
+"gender" : "Genderqueer",                                                                                                                                                                            
+"ip_address" : "40.25.79.151",                                                                                                                                                                       
+"age" : 48                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a590b"),                                                                                                                                                        
+"first_name" : "Avrom",                                                                                                                                                                              
+"last_name" : "MattiCCI",                                                                                                                                                                            
+"email" : "amatticci7@1und1.de",                                                                                                                                                                     
+"gender" : "Agender",                                                                                                                                                                                
+"ip_address" : "90.6.125.120",                                                                                                                                                                       
+"age" : 48                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+{                                                                                                                                                                                                            
+"_id" : ObjectId("611679cc8a0ba430ac1a590c"),                                                                                                                                                        
+"first_name" : "Pietrek",                                                                                                                                                                            
+"last_name" : "Figgins",                                                                                                                                                                             
+"email" : "pfiggins8@weibo.com",                                                                                                                                                                     
+"gender" : "Polygender",                                                                                                                                                                             
+"ip_address" : "111.108.233.139",                                                                                                                                                                    
+"age" : 14                                                                                                                                                                                   
+}                                                                                                                                                                                                    
+> db.assignment.drop();                                                                                                                                                                              
+false                                                                                                                                                                                                
+> use assignment;                                                                                                                                                                                    
+switched to db assignment                                                                                                                                                                            
+> db.assignment.drop();                                                                                                                                                                              
+false                                                                                                                                                                                                
+> use assignment;                                                                                                                                                                                    
+switched to db assignment                                                                                                                                                                            
+> db.dropDatabase();                                                                                                                                                                                 
+{ "ok" : 1 }                                                                                                                                                                                         
+> show dbs                                                                                                                                                                                           
+admin   0.000GB                                                                                                                                                                                      
+config  0.000GB                                                                                                                                                                                      
+local   0.000GB
